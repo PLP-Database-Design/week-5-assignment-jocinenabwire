@@ -1,0 +1,77 @@
+<!-- 1. Retrieve all patients -->
+<table>
+    <thead>
+        <tr>
+            <th> Patient ID </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Date of Birth </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+            <tr>
+                <td> <%= row.patient_id %> </td>
+                <td> <%= row.first_name %> </td>
+                <td> <%= row.last_name %> </td>
+                <td> <%= row.date_of_birth.toISOString().split('T')[0] %> </td>
+            </tr>
+        <%});%>
+    </tbody>
+</table>
+
+<!-- 2. Retrieve all providers -->
+<table>
+    <thead>
+        <tr>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Specialty </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+            <tr>
+                <td> <%= row.first_name %> </td>
+                <td> <%= row.last_name %> </td>
+                <td> <%= row.provider_specialty %> </td>
+            </tr>
+        <%});%>
+    </tbody>
+</table>
+
+<!-- 3. Filter patients by first name -->
+<table>
+    <thead>
+        <tr>
+            <th> Patient ID </th>
+            <th> First Name </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+            <tr>
+                <td> <%= row.patient_id %> </td>
+                <td> <%= row.first_name %> </td>
+            </tr>
+        <%});%>
+    </tbody>
+</table>
+
+<!-- 4. Retrieve all providers by their speciality -->
+<table>
+    <thead>
+        <tr>
+            <th> First Name </th>
+            <th> Provider Specialty </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row =>{%>
+            <tr>
+                <td> <%= row.first_name %> </td>
+                <td> <%= row.provider_specialty %> </td>
+            </tr>
+        <%});%>
+    </tbody>
+</table>
